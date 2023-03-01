@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
         result = "You lose! Paper beats Rock!";
     }
      else if (playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'scissors') {
-        result = "You Win! Rock beats Scissors!";
+        result = "You win! Rock beats Scissors!";
     }
      else if (playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'scissors') {
         result = "You lose! Scissors beats Paper!";
@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
         result = "You win! Paper beats Rock!";
     }
      else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'rock') {
-        result = "You lose! Rock beats Paper!";
+        result = "You lose! Rock beats Scissors!";
     }
      else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'paper') {
         result = "You win! Scissors beats Paper!";
@@ -37,7 +37,36 @@ function playRound(playerSelection, computerSelection) {
     return result
 }
 
-const playerSelection = 'rock'
-const computerSelection = getComputerChoice(choices)
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection))
+
+let computerSelection = getComputerChoice(choices)
+let playerCount = 0;
+let computerCount = 0;
+
+function getResult() {
+    if (playerCount > computerCount) {
+        finalResult = 'You won!';
+    }
+    else if (playerCount < computerCount) {
+        finalResult = 'Better luck next time! AI won this time around';
+    }
+    else {
+        finalResult = "Nobody wins... It's a draw!"
+    }
+    return finalResult;
+}
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+    playerSelection = prompt('Rock, Paper or Scissors?');
+    computerSelection = getComputerChoice(choices);
+    console.log(playRound(playerSelection, computerSelection));
+    if (result.substr(0,8) === 'You win!'){
+        playerCount = playerCount + 1; 
+    }
+    else if (result.substr(0,9) === 'You lose!') {
+        computerCount = computerCount + 1;
+    }        
+}
+console.log(getResult());
+}
+game();
