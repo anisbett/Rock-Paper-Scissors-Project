@@ -56,7 +56,7 @@ function getResult() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+   /* for (let i = 0; i < 5; i++) {
     playerSelection = prompt('Rock, Paper or Scissors?');
     computerSelection = getComputerChoice(choices);
     console.log(playRound(playerSelection, computerSelection));
@@ -65,8 +65,8 @@ function game() {
     }
     else if (result.substr(0,9) === 'You lose!') {
         computerCount = computerCount + 1;
-    }        
-}
+    }   
+} */
 console.log(getResult());
 }
 game();
