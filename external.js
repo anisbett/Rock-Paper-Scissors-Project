@@ -10,7 +10,7 @@ function getComputerChoice(arr) {
 
 const choices = ['Rock', 'Paper', 'Scissors']
 
-const computerSelection = getComputerChoice(choices);
+
 
 // Get references to the button elements
 let rockButton = document.getElementById("rock");
@@ -33,10 +33,9 @@ scissorsButton.addEventListener("click", function() {
 
 
 function playRound(playerSelection) {
-    
+    const computerSelection = getComputerChoice(choices);
     let result;
     console.log(computerSelection);
-    console.log(playerSelection);
 
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         result = "It's a draw!";
@@ -60,6 +59,7 @@ function playRound(playerSelection) {
         result = "You win! Scissors beats Paper!";
     }
     console.log(result);
+
 }
 
 
