@@ -10,9 +10,34 @@ function getComputerChoice(arr) {
 
 const choices = ['Rock', 'Paper', 'Scissors']
 
-console.log(getComputerChoice(choices))
+const computerSelection = getComputerChoice(choices);
 
-function playRound(playerSelection, computerSelection) {
+// Get references to the button elements
+let rockButton = document.getElementById("rock");
+let paperButton = document.getElementById("paper");
+let scissorsButton = document.getElementById("scissors");
+
+// Add event listeners to each button
+rockButton.addEventListener("click", function() {
+    playRound('rock');
+});
+
+paperButton.addEventListener("click", function() {
+    playRound('paper');
+});
+
+scissorsButton.addEventListener("click", function() {
+    playRound('scissors');
+});
+
+
+
+function playRound(playerSelection) {
+    
+    let result;
+    console.log(computerSelection);
+    console.log(playerSelection);
+
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         result = "It's a draw!";
     }
@@ -34,11 +59,12 @@ function playRound(playerSelection, computerSelection) {
      else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'paper') {
         result = "You win! Scissors beats Paper!";
     }
-    return result
+    console.log(result);
 }
 
 
-let computerSelection = getComputerChoice(choices)
+
+/* let computerSelection = getComputerChoice(choices)
 let playerCount = 0;
 let computerCount = 0;
 
@@ -53,10 +79,10 @@ function getResult() {
         finalResult = "Nobody wins... It's a draw!"
     }
     return finalResult;
-}
+} 
 
 function game() {
-   /* for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
     playerSelection = prompt('Rock, Paper or Scissors?');
     computerSelection = getComputerChoice(choices);
     console.log(playRound(playerSelection, computerSelection));
@@ -66,7 +92,7 @@ function game() {
     else if (result.substr(0,9) === 'You lose!') {
         computerCount = computerCount + 1;
     }   
-} */
+} 
 console.log(getResult());
 }
-game();
+game(); */
